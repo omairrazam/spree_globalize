@@ -16,6 +16,10 @@ module SpreeGlobalize
       )
     end
 
+    def locale_presentation(locale)
+      [Spree.t(:'i18n.this_file_language', locale: locale), locale]
+    end
+    
     def supported_locales_options
       Config.supported_locales.map { |locale| locale_presentation(locale) }
     end
